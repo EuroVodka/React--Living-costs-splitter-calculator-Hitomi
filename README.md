@@ -2,3 +2,5 @@
 Split living costs relative to personal income #fair
 
 [Preview](https://eurovodka-react-couple-costs-sharing.netlify.com/)
+
+Warning: Use `yarn` instead of `npm`
