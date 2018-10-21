@@ -54,7 +54,7 @@ export default App
 X 2000
 Z 1000
 
-X 66.6%
+Costs: 1000
 
-X 799.2£
+X 66.6% = 799.2
 */
