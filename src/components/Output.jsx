@@ -1,7 +1,11 @@
 import React from 'react'
+import PropTypes  from 'prop-types'
+
+Output.propTypes = {
+	amount: PropTypes.number.isRequired,
+}
 
 const Output = ( props ) => {
-	// eslint-disable-next-line react/prop-types
 	const amount = props.amount && !isNaN( props.amount ) ? props.amount : 0
 	return (
 		<span>

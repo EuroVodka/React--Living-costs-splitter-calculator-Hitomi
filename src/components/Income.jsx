@@ -1,8 +1,14 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 class Income extends React.Component {
+	static propTypes = {
+		onChangeIncome: PropTypes.func.isRequired,
+		xSalary: PropTypes.number.isRequired,
+		ySalary: PropTypes.number.isRequired,
+	}
+
 	setIncome = ( event, field ) => {
-		// eslint-disable-next-line react/prop-types
 		this.props.onChangeIncome( event.target.value, field )
 	}
 
@@ -12,7 +18,6 @@ class Income extends React.Component {
 				<input
 					onChange={ ( e ) => this.setIncome( e, 'xSalary' ) }
 					defaultValue={
-						// eslint-disable-next-line react/prop-types
 						this.props.xSalary
 					}
 					type="number"
@@ -21,7 +26,6 @@ class Income extends React.Component {
 				<input
 					onChange={ ( e ) => this.setIncome( e, 'ySalary' ) }
 					defaultValue={
-						// eslint-disable-next-line react/prop-types
 						this.props.ySalary
 					}
 					type="number"
