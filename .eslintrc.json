@@ -106,7 +106,8 @@
     "react/jsx-filename-extension": ["error", { "extensions": [".jsx"] }],
     "react/jsx-tag-spacing": "error",
     "react/jsx-wrap-multilines": "error",
-    "react/self-closing-comp": "error"
+    "react/self-closing-comp": "error",
+    "react/no-direct-mutation-state:": "error"
   },
   "settings": {
     "import/resolver": {
