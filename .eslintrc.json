@@ -1,4 +1,4 @@
-{
+{//todo add proptypes order on top
   "env": {
     "browser": true, //to use windows or localstorage,or browser API
     "es6": true
@@ -106,7 +106,9 @@
     "react/jsx-filename-extension": ["error", { "extensions": [".jsx"] }],
     "react/jsx-tag-spacing": "error",
     "react/jsx-wrap-multilines": "error",
-    "react/self-closing-comp": "error"
+		"react/self-closing-comp": "error",
+		"react/no-unused-prop-types": ["error", { "skipShapeProps": false }]
+
   },
   "settings": {
     "import/resolver": {
