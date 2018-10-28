@@ -10,10 +10,6 @@ export default class ErrorCatcher extends React.Component {
 		}
 	}
 
-	static propTypes = {
-		children: PropTypes.element,
-	}
-
 	componentDidCatch( error, info ) {
 		this.setState( ( state ) => ( {
 			errorFound: !state.errorFound,
@@ -32,5 +28,9 @@ export default class ErrorCatcher extends React.Component {
 		) : (
 			this.props.children
 		)
+	}
+
+	static propTypes = {
+		children: PropTypes.element,
 	}
 }

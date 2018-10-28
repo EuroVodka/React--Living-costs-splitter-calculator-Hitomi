@@ -2,11 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 class Costs extends React.Component {
-	static propTypes = {
-		onChangeCosts: PropTypes.func.isRequired,
-		totalCost: PropTypes.number.isRequired,
-	}
-
 	setCosts = ( event ) => {
 		this.props.onChangeCosts( event.target.value, 'totalCost' )
 	}
@@ -16,14 +11,17 @@ class Costs extends React.Component {
 			<form>
 				<input
 					onChange={ this.setCosts }
-					defaultValue={
-						this.props.totalCost
-					}
+					defaultValue={ this.props.totalCost }
 					type="number"
 					placeholder="..Total cost.."
 				/>
 			</form>
 		)
+	}
+
+	static propTypes = {
+		onChangeCosts: PropTypes.func.isRequired,
+		totalCost: PropTypes.number.isRequired,
 	}
 }
 
