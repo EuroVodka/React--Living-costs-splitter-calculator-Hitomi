@@ -1,8 +1,8 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 class Costs extends React.Component {
 	setCosts = ( event ) => {
-		// eslint-disable-next-line react/prop-types
 		this.props.onChangeCosts( event.target.value, 'totalCost' )
 	}
 
@@ -11,15 +11,17 @@ class Costs extends React.Component {
 			<form>
 				<input
 					onChange={ this.setCosts }
-					defaultValue={
-						// eslint-disable-next-line react/prop-types
-						this.props.totalCost
-					}
+					defaultValue={ this.props.totalCost }
 					type="number"
 					placeholder="..Total cost.."
 				/>
 			</form>
 		)
+	}
+
+	static propTypes = {
+		onChangeCosts: PropTypes.func.isRequired,
+		totalCost: PropTypes.number.isRequired,
 	}
 }
 
