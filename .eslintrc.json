@@ -107,8 +107,8 @@
     "react/jsx-tag-spacing": "error",
     "react/jsx-wrap-multilines": "error",
 		"react/self-closing-comp": "error",
-		"react/no-unused-prop-types": ["error", { "skipShapeProps": false }]
-
+		"react/no-unused-prop-types": ["error", { "skipShapeProps": false }],
+		"react/no-multi-comp": ["error", { "ignoreStateless": true }]
   },
   "settings": {
     "import/resolver": {
