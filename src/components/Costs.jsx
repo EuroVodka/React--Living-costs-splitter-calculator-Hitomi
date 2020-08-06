@@ -1,20 +1,26 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { TextInput } from 'evergreen-ui'
 
 class Costs extends React.Component {
 	setCosts = ( event ) => {
-		this.props.onChangeCosts( event.target.value, 'totalCost' )
+		const value = event.target.value
+		!isNaN( value ) && this.props.onChangeCosts( event.target.value, 'totalCost' )
 	}
 
 	render() {
 		return (
 			<form>
-				<input
-					onChange={ this.setCosts }
-					defaultValue={ this.props.totalCost }
-					type="number"
-					placeholder="..Total cost.."
-				/>
+				<div className="input-field">
+					<label htmlFor="costs">Total costs</label>
+					<TextInput
+						onChange={ this.setCosts }
+						name="costs"
+						value={ this.props.totalCost }
+						placeholder="..Total cost.."
+						height={ 48 }
+					/>
+				</div>
 			</form>
 		)
 	}

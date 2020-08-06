@@ -1,63 +1,105 @@
 html {
-    color: #222;
-    font-size: 1em;
-    font-family: Helvetica, sans-serif;
-    line-height: 1.4;
+	color: #222;
+	font-size: 1em;
+	font-family: Helvetica, sans-serif;
+	line-height: 1.4;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 100%;
+	height: 100%;
 }
 
 ::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
+	background: #b3d4fc;
+	text-shadow: none;
 }
 
 ::selection {
-    background: #b3d4fc;
-    text-shadow: none;
+	background: #b3d4fc;
+	text-shadow: none;
 }
-
-
 
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
 * {
-  box-sizing: border-box;
-  margin: 2vw 0;
+	box-sizing: border-box;
 }
-section{
-  max-width: 768px;
-  padding: 0.5em;
+section {
+	max-width: 768px;
+	padding: 0.5em;
 }
 
-output{
-  height: 100%;
-  padding: 0.3em;
-  padding-left: 0;
+output {
+	height: 100%;
+	padding: 0.3em;
+	padding-left: 0;
 }
 input,
 span,
 button,
 h6 {
-  display: inline-block;
-  width: 100%;
-  height: 2em;
-  text-align: center;
-  font-size: 3em;
+	display: inline-block;
+	width: 100%;
+	height: 2em;
+	text-align: center;
+	font-size: 2em;
 }
-
 
 /* ==========================================================================
    Media Queries
    ========================================================================== */
 
-@media only screen and (max-width: 23em) {
-    input,
-    span,
-     {
-      font-size: 2.5em;
-    }
+@media only screen and (min-width: 52em) {
+	input,
+	span {
+		font-size: 2.5em;
+	}
+	input {
+		max-width: 16vw;
+	}
+}
+
+/* ==== Custom styles === */
+
+body {
+	background: #f4f4f4;
+}
+label {
+	margin: 0;
+}
+
+input {
+	/* height: 5vh; */
+	margin-top: 0.5vh;
+}
+
+.input-field {
+	display: flex;
+	flex-flow: column;
+	margin-bottom: 1rem;
+}
+
+.title {
+	text-align: center;
+	color: #f5f5f5;
+	text-shadow: 1px 1px 1px #f5f5f5, 1px 2px 1px #f5f5f5, 1px 3px 1px #f5f5f5,
+		1px 4px 1px #f5f5f5, 1px 5px 1px #f5f5f5, 1px 6px 1px #f5f5f5,
+		1px 18px 6px rgba(16, 16, 16, 0.4), 1px 22px 10px rgba(16, 16, 16, 0.2),
+		1px 25px 35px rgba(16, 16, 16, 0.2), 1px 30px 60px rgba(16, 16, 16, 0.4);
+}
+
+output {
+	font: 1rem "Trebuchet MS", "Helvetica", sans-serif;
+}
+
+.main {
+	overflow-y: auto;
+}
+
+.separate-context {
+	margin-top: 1rem;
 }

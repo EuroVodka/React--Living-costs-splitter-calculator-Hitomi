@@ -1,4 +1,5 @@
 import React from 'react'
+import { Heading, Pane, minorScale } from 'evergreen-ui'
 
 import Income from './Income'
 import Costs from './Costs'
@@ -7,8 +8,8 @@ import ErrorCatcher from './../utilities/ErrorCatcher'
 
 class App extends React.Component {
 	state = {
-		xSalary: 0,
-		ySalary: 0,
+		a_Income: 0,
+		b_Income: 0,
 		totalCost: 0,
 	}
 
@@ -19,33 +20,47 @@ class App extends React.Component {
 	}
 
 	render() {
-		const { xSalary, ySalary, totalCost } = this.state
+		const { a_Income, b_Income, totalCost } = this.state
 
-		const totalSalaries = xSalary + ySalary
+		const totalSalaries = a_Income + b_Income
 
-		const percentageX = ( 100 * xSalary ) / totalSalaries
-		const percentageY = ( 100 * ySalary ) / totalSalaries
+		const percentageX = ( 100 * a_Income ) / totalSalaries
+		const percentageY = ( 100 * b_Income ) / totalSalaries
 
 		const amoutCostX = ( ( totalCost * percentageX ) / 100 ).toFixed( 2 )
 		const amoutCostY = ( ( totalCost * percentageY ) / 100 ).toFixed( 2 )
 
 		return (
 			<ErrorCatcher>
-				<section>
-					<h2>Relative Expanses</h2>
-					<Income
-						xSalary={ this.state.xSalary }
-						ySalary={ this.state.ySalary }
-						onChangeIncome={ this.onChangeAmount }
-					/>
-					<hr />
-					<Costs
-						totalCost={ this.state.totalCost }
-						onChangeCosts={ this.onChangeAmount }
-					/>
-					<Output amount={ +amoutCostX } />
-					<Output amount={ +amoutCostY } />
-				</section>
+				<div className="main">
+					<Pane padding={ minorScale( 2 ) }>
+						<Heading size={ 800 } marginTop={ 16 } className="title" >
+							Hitomi
+						</Heading>
+					</Pane>
+					<form>
+
+
+						<Pane elevation={ 2 } padding={ minorScale( 4 ) } border="default" background="tint1">
+							<Income
+								a_Income={ this.state.a_Income }
+								b_Income={ this.state.b_Income }
+								onChangeIncome={ this.onChangeAmount }
+							/>
+						</Pane>
+						<Pane elevation={ 2 } padding={ minorScale( 4 ) } border="default" background="tint1">
+							<Costs
+								totalCost={ this.state.totalCost }
+								onChangeCosts={ this.onChangeAmount }
+							/>
+						</Pane>
+					</form>
+					<Pane elevation={ 1 } padding={ minorScale( 1 ) } margin={ minorScale( 3 ) } border="default" background="tint1" className="separate-context">
+						<Output amount={ +amoutCostX } />
+						<Output amount={ +amoutCostY } />
+					</Pane>
+				</div>
+
 			</ErrorCatcher>
 		)
 	}
