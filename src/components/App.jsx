@@ -39,8 +39,6 @@ class App extends React.Component {
 						</Heading>
 					</Pane>
 					<form>
-
-
 						<Pane elevation={ 2 } padding={ minorScale( 4 ) } border="default" background="tint1">
 							<Income
 								a_Income={ this.state.a_Income }

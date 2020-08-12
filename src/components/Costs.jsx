@@ -10,18 +10,16 @@ class Costs extends React.Component {
 
 	render() {
 		return (
-			<form>
-				<div className="input-field">
-					<label htmlFor="costs">Total costs</label>
-					<TextInput
-						onChange={ this.setCosts }
-						name="costs"
-						value={ this.props.totalCost }
-						placeholder="..Total cost.."
-						height={ 48 }
-					/>
-				</div>
-			</form>
+			<div className="input-field">
+				<label htmlFor="costs">Total costs</label>
+				<TextInput
+					onChange={ this.setCosts }
+					name="costs"
+					value={ this.props.totalCost }
+					placeholder="..Total cost.."
+					height={ 48 }
+				/>
+			</div>
 		)
 	}
 
