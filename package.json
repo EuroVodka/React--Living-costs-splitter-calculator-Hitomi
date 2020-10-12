@@ -1,46 +1,215 @@
 {
-  "name": "hitomi",
-  "description": "Living costs fair splitter",
-  "dependencies": {
-    "evergreen-ui": "^4.28.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-prop-types": "0.4.0",
-    "react-scripts": "^3.4.3"
-  },
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "precommit": "lint-staged"
-  },
-  "lint-staged": {
-    "src/**/*.{js,jsx,json}": [
-      "eslint --fix",
-      "git add"
-    ]
-  },
-  "devDependencies": {
-    "babel-preset-react": "^6.24.1",
-    "eslint": "^6.8.0",
-    "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-react": "^7.20.3",
-    "husky": "^1.0.0-rc.15",
-    "lint-staged": "^7.3.0"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+	"name": "hitomi",
+	"version": "0.1.0",
+	"private": true,
+	"dependencies": {
+		"@testing-library/jest-dom": "^4.2.4",
+		"@testing-library/react": "^9.5.0",
+		"@testing-library/user-event": "^7.2.1",
+		"@types/jest": "^24.9.1",
+		"@types/node": "^12.12.64",
+		"@types/react": "^16.9.51",
+		"@types/react-dom": "^16.9.8",
+		"eslint-plugin-import": "^2.22.1",
+		"eslint-plugin-react": "^7.21.3",
+		"react": "^16.13.1",
+		"react-dom": "^16.13.1",
+		"react-scripts": "3.4.3",
+		"typescript": "^3.7.5"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject"
+	},
+	"eslintConfig": {
+		"extends": [
+			"react-app",
+			"shared-config"
+		],
+		"plugins": [
+			"import"
+		],
+		"rules": {
+			"valid-jsdoc": "warn",
+			"eqeqeq": "error",
+			"radix": "error",
+			"strict": [
+				"error",
+				"global"
+			],
+			"no-shadow": "error",
+			"array-bracket-spacing": "error",
+			"comma-dangle": [
+				"error",
+				"always-multiline"
+			],
+			"comma-spacing": "error",
+			"comma-style": "error",
+			"eol-last": "error",
+			"indent": [
+				"error",
+				"tab"
+			],
+			"jsx-quotes": "error",
+			"key-spacing": [
+				"error",
+				{
+					"mode": "minimum"
+				}
+			],
+			"lines-between-class-members": [
+				"error",
+				"always"
+			],
+			"max-depth": [
+				"error",
+				4
+			],
+			"max-len": [
+				"warn",
+				{
+					"code": 80,
+					"ignoreUrls": true
+				}
+			],
+			"new-cap": [
+				"error",
+				{
+					"capIsNewExceptions": [
+						"URI"
+					]
+				}
+			],
+			"no-multi-spaces": [
+				"error",
+				{
+					"exceptions": {
+						"ImportDeclaration": true,
+						"VariableDeclarator": true
+					}
+				}
+			],
+			"no-unexpected-multiline": "error",
+			"no-multiple-empty-lines": [
+				"error",
+				{
+					"max": 2,
+					"maxBOF": 0,
+					"maxEOF": 0
+				}
+			],
+			"object-curly-spacing": [
+				"error",
+				"always"
+			],
+			"operator-linebreak": [
+				"error",
+				"before"
+			],
+			"quotes": [
+				"error",
+				"single",
+				{
+					"avoidEscape": true
+				}
+			],
+			"semi": [
+				"error",
+				"never"
+			],
+			"space-before-function-paren": [
+				"error",
+				"never"
+			],
+			"space-in-parens": [
+				"error",
+				"always"
+			],
+			"template-curly-spacing": [
+				"error",
+				"always"
+			],
+			"arrow-body-style": "error",
+			"arrow-parens": "error",
+			"arrow-spacing": "error",
+			"generator-star-spacing": [
+				"error",
+				"after"
+			],
+			"no-var": "error",
+			"prefer-arrow-callback": "error",
+			"prefer-const": "error",
+			"prefer-rest-params": "error",
+			"prefer-spread": "error",
+			"prefer-template": "error",
+			"rest-spread-spacing": "error",
+			"import/first": "error",
+			"import/newline-after-import": "error",
+			"import/order": [
+				"error",
+				{
+					"groups": [
+						"builtin",
+						[
+							"external",
+							"internal"
+						],
+						[
+							"parent",
+							"sibling",
+							"index"
+						]
+					],
+					"newlines-between": "always"
+				}
+			],
+			"react/jsx-boolean-value": "error",
+			"react/jsx-closing-bracket-location": "error",
+			"react/jsx-curly-spacing": [
+				"error",
+				{
+					"when": "always",
+					"children": true
+				}
+			],
+			"react/jsx-filename-extension": [
+				"error",
+				{
+					"extensions": [
+						".jsx",
+						".tsx"
+					]
+				}
+			],
+			"react/jsx-tag-spacing": "error",
+			"react/jsx-wrap-multilines": "error",
+			"react/self-closing-comp": "error",
+			"react/no-unused-prop-types": [
+				"error",
+				{
+					"skipShapeProps": false
+				}
+			],
+			"react/no-multi-comp": [
+				"error",
+				{
+					"ignoreStateless": true
+				}
+			]
+		}
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	}
 }
